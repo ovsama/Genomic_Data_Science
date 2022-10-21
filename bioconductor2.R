@@ -1,7 +1,7 @@
 #----------------------### 01 SHOWING UP : Biostrings exercises###----------------------------------------------------
 
 
-###_https://www.r-exercises.com/2017/01/22/bioinformatics-lessons-in-r-1-biostrings-exercises/
+### exercise from --> https://www.r-exercises.com/2017/01/22/bioinformatics-lessons-in-r-1-biostrings-exercises/
 
                
 
