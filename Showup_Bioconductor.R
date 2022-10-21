@@ -113,25 +113,9 @@ matrix <- nucleotideSubstitutionMatrix(match = 1, mismatch = -3)
 pairwiseAlignment(d1, d2,substitutionMatrix = matrix,type="overlap")
 
 
-
-#------------------### FASTA and BioString exercises ###------------------
-
-#https://rockefelleruniversity.github.io/Bioconductor_Introduction/
-
-BiocManager::install('RockefellerUniversity/Bioconductor_Introduction',subdir='BioconductorIntroduction')
-
-library(BSgenome.Hsapiens.UCSC.hg19) 
-
-
 #-------------------------------------------------------------------------------------
 
-# https://compgenomr.github.io/book/exercises-4.html
-
-# THE SOLUTIONS TO THE EXERCISES ARE AVAILABLE HERE
-   # https://github.com/compgenomr/exercises 
-
-
- #3. 
+# Exercise from --> https://compgenomr.github.io/book/exercises-4.html
 
 library(rtracklayer)
 library(AnnotationHub)
@@ -180,7 +164,7 @@ length((subsetByOverlaps(prrfsq, CpG_chr12))$name)
 length (prrfsq) # 5198 promoters
 length (CpG_chr12) # 627 CpG 
 
-# Percentage of promoters overlap with CpG islands
+# Percentage of promoters which overlap with CpG islands
 2271/5198 #= 0.44 = 44 % 
 
 subsetByOverlaps(CpG_chr12, prrfsq)
@@ -196,82 +180,6 @@ CpGoverlap
 width(CpGoverlap)
  
 plot( width(CpGoverlap)) 
-
-
-####_______________________
-devtools::install_github("compgenomr/compGenomRData")
-
-options(timeout=300)
-
-
-# Packages needed to run the book code
-BiocManager::install(c('qvalue','plot3D','pheatmap','cowplot',
-                       'cluster', 'NbClust', 'fastICA', 'NMF','matrixStats',
-                       'Rtsne', 'mosaic', 'knitr', 'genomation',
-                       'ggbio', 'Gviz', 'RUVSeq',
-                       'gProfileR', 'ggfortify', 'corrplot',
-                       'gage', 'EDASeq', 'citr', 'formatR',
-                       'svglite', 'Rqc', 'QuasR',
-                       'methylKit','FactoMineR', 'iClusterPlus',
-                       'enrichR','caret','xgboost','glmnet',
-                       'DALEX','kernlab','pROC','nnet','RANN',
-                       'ranger', 'ComplexHeatmap', 'circlize',
-                       'rtracklayer',  'BSgenome.Hsapiens.UCSC.hg38',
-                          'tidyr',
-                       'normr',  'MotifDb',   'TFBSTools',  'rGADEM',  'JASPAR2018'))
-
-
-# Data for the book
-
-# our own package compGenomRData.
-devtools::install_github("compgenomr/compGenomRData") 
-
-# We use the system.file() function to get the path to the files.
-
-library("compGenomRData")
-
-dir(system.file("extdata",
-                package="compGenomRData"))
-
-find.package("devtools") # that exists.
-
-library(devtools)
-find_rtools()  # TRUE that exists.
-
-###_______________________________________________________________________________________
-
-library(TxDb.Hsapiens.UCSC.hg19.knownGene)
-
-library("BSgenome.Hsapiens.UCSC.hg19" )
-Hsapiens
-
-Hsapiens$chrY
-
-seqlengths(Hsapiens$chrY)
-
-letterFrequency(Hsapiens$chrY, "GC")
-
-tx <- TxDb.Hsapiens.UCSC.hg19.knownGene
-
-genes( tx)
-
-nrows <- 200
-ncols <- 6
-
-counts <- matrix(runif(nrows * ncols, 1, 1e4), nrows)
-counts
-
-
-floor(5.4)
-ceiling(5.4)
-
-?floor
-
-
-floor(runif(100, 1, 100))
-
-
-
 
 
 #---- 02 SHOWING UP : Enrichment CpG, Promotors, TSS...---------------------------------
@@ -364,7 +272,7 @@ sum(countOverlaps(peaks21, cpg21)) #56
 
 which( (countOverlaps(peaks21,cpg21)) == 2) #462th position
 
-# look at [9] & [10] : the same peak (n°462) overlaps with 2 different CpG.
+# look at [9] & [10] : the same peak (nÂ°462) overlaps with 2 different CpG.
 Overl[15:25] 
 
 
@@ -2418,8 +2326,8 @@ volcanoplot(fit, coef = 2,  highlight = 100 ,  names = fit$genes$NAME)
 
 #-----------08 SHOWING UP: BiomaRt & Biomart Project-------------------------------
 
-#  BioMart est développé dans le but de permettre d'interroger, 
-#avec un seul outil, un grand nombre de bases de données
+#  BioMart est dÃ©veloppÃ© dans le but de permettre d'interroger, 
+#avec un seul outil, un grand nombre de bases de donnÃ©es
 #internationales.
 
 
