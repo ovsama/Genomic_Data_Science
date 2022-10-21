@@ -469,7 +469,7 @@ peaks<- gr2 # narrowPeak
 
 #we need to get the promoters.
 #Promoter = is a small interval of ~ 2KB
-# around the trscrpt° start side (TSS) of genes.
+# around the trscrptÂ° start side (TSS) of genes.
 
 #We're gonna get the TSS of genes.
 #The way to do that is to use a transcript database object (TSDB). 
